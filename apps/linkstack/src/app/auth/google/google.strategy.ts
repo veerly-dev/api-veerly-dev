@@ -20,9 +20,11 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     });
     if (clientID && clientSecret && callbackURL) {
       super({
-        clientID,
-        clientSecret,
-        callbackURL,
+        clientID:
+          '204313397467-1vbr1j79oun0itfojvd20amntvos8kjt.apps.googleusercontent.com',
+        clientSecret: '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',
+        callbackURL:
+          'https://api-veerly-dev.up.railway.app/api/auth/google/redirect',
         scope: ['email', 'profile'],
       });
     } else {
