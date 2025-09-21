@@ -1,5 +1,5 @@
 {
-  "name": "@linkstack-hub/linkstack",
+  "name": "@veerly-dev/linkstack",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@linkstack-hub/linkstack:build",
+          "buildTarget": "@veerly-dev/linkstack:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@linkstack-hub/linkstack:build:development"
+            "buildTarget": "@veerly-dev/linkstack:build:development"
           },
           "production": {
-            "buildTarget": "@linkstack-hub/linkstack:build:production"
+            "buildTarget": "@veerly-dev/linkstack:build:production"
           }
         }
       },

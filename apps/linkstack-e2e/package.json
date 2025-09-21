@@ -1,10 +1,10 @@
 {
-  "name": "@linkstack-hub/linkstack-e2e",
+  "name": "@veerly-dev/linkstack-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@linkstack-hub/linkstack"
+      "@veerly-dev/linkstack"
     ],
     "targets": {
       "e2e": {
@@ -17,8 +17,8 @@
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@linkstack-hub/linkstack:build",
-          "@linkstack-hub/linkstack:serve"
+          "@veerly-dev/linkstack:build",
+          "@veerly-dev/linkstack:serve"
         ]
       }
     }

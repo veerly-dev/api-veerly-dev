@@ -1,9 +1,9 @@
 {
-  "name": "@linkstack-hub/source",
+  "name": "@veerly-dev/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve api"
+    "start": "nx serve linkstack"
   },
   "private": true,
   "devDependencies": {

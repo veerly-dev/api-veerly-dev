@@ -10,7 +10,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@linkstack-hub/linkstack',
+  displayName: '@veerly-dev/linkstack',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
