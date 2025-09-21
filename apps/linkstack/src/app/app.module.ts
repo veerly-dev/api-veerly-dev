@@ -8,9 +8,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OrganizationModule } from './organization/organization.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // 👈 This is the key
+    }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'apps/linkstack/dist/schema.gql'),

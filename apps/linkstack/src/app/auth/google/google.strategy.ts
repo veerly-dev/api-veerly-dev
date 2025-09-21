@@ -10,6 +10,11 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     const clientID = config.get('GOOGLE_CLIENT_ID');
     const clientSecret = config.get('GOOGLE_CLIENT_SECRET');
     const callbackURL = config.get('GOOGLE_CALLBACK_URL');
+    console.log({
+      clientID: config.get('GOOGLE_CLIENT_ID'),
+      clientSecret: config.get('GOOGLE_CLIENT_SECRET'),
+      callbackURL: config.get('GOOGLE_CALLBACK_URL'),
+    });
     if (clientID && clientSecret && callbackURL) {
       super({
         clientID,
