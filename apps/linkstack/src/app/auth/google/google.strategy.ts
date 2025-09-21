@@ -7,27 +7,20 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   constructor(config: ConfigService) {
-    const clientID =
-      config.get('GOOGLE_CLIENT_ID') || process.env.GOOGLE_CLIENT_ID;
-    const clientSecret =
-      config.get('GOOGLE_CLIENT_SECRET') || process.env.GOOGLE_CLIENT_SECRET;
-    const callbackURL =
-      config.get('GOOGLE_CALLBACK_URL') || process.env.GOOGLE_CALLBACK_URL;
-    console.log({
-      clientID: config.get('GOOGLE_CLIENT_ID'),
-      clientSecret: config.get('GOOGLE_CLIENT_SECRET'),
-      callbackURL: config.get('GOOGLE_CALLBACK_URL'),
+    const clientID = process.env.GOOGLE_CLIENT_ID;
+    const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+    const callbackURL = process.env.GOOGLE_CALLBACK_URL;
+    console.log({ clientID, clientSecret, callbackURL });
+    super({
+      clientID:
+        '204313397467-1vbr1j79oun0itfojvd20amntvos8kjt.apps.googleusercontent.com',
+      clientSecret: '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',
+      callbackURL:
+        'https://api-veerly-dev.up.railway.app/api/auth/google/redirect',
+      scope: ['email', 'profile'],
     });
-    if (clientID && clientSecret && callbackURL) {
-      super({
-        clientID:
-          '204313397467-1vbr1j79oun0itfojvd20amntvos8kjt.apps.googleusercontent.com',
-        clientSecret: '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',
-        callbackURL:
-          'https://api-veerly-dev.up.railway.app/api/auth/google/redirect',
-        scope: ['email', 'profile'],
-      });
-    } else {
+
+    if (!clientID || !clientSecret || !callbackURL) {
       throw new Error('Google OAuth environment variables are not set');
     }
   }
