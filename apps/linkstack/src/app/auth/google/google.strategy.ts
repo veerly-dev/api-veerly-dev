@@ -11,18 +11,15 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
     const callbackURL = process.env.GOOGLE_CALLBACK_URL;
     console.log({ clientID, clientSecret, callbackURL });
-    super({
-      clientID:
-        '204313397467-1vbr1j79oun0itfojvd20amntvos8kjt.apps.googleusercontent.com',
-      clientSecret: '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',
-      callbackURL:
-        'https://api-veerly-dev.up.railway.app/api/auth/google/redirect',
-      scope: ['email', 'profile'],
-    });
-
     if (!clientID || !clientSecret || !callbackURL) {
       throw new Error('Google OAuth environment variables are not set');
     }
+    super({
+      clientID,
+      clientSecret,
+      callbackURL,
+      scope: ['email', 'profile'],
+    });
   }
 
   async validate(accessToken: string, refreshToken: string, profile: Profile) {
