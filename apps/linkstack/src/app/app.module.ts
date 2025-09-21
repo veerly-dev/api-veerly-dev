@@ -10,6 +10,8 @@ import { OrganizationModule } from './organization/organization.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 
+import { JwtService } from '@nestjs/jwt';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -18,7 +20,12 @@ import { ConfigModule } from '@nestjs/config';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'apps/linkstack/dist/schema.gql'),
-      context: ({ req }: { req: Request }) => ({ user: req.user }),
+      context: ({ req }: { req: Request }) => {
+        const jwtService = new JwtService();
+        const token = req.headers.authorization?.replace('Bearer ', '');
+        const user = token ? jwtService.verify(token) : null;
+        return { user };
+      },
     }),
     OrganizationModule,
     AuthModule,
