@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve linkstack"
+    "build": "prisma generate --schema=apps/linkstack/prisma/schema.prisma  && nx build @veerly-dev/linkstack",
+    "start": "node dist/apps/linkstack/main.js"
   },
   "private": true,
   "devDependencies": {
