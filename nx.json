@@ -1,4 +1,5 @@
 {
+  "npmScope": "veerly-dev",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -28,7 +29,12 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": [
+        "libs/dairy-book-buffalo-inventory/*",
+        "libs/dairy-book/buffalo-inventory/*",
+        "libs/dairy-book/metadata/*"
+      ]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -53,6 +59,19 @@
         "targetName": "test"
       },
       "exclude": ["apps/linkstack-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": [
+        "libs/dairy-book-buffalo-inventory/*",
+        "libs/dairy-book/buffalo-inventory/*",
+        "libs/dairy-book/metadata/*"
+      ],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
     }
   ],
   "targetDefaults": {

@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "prisma generate --schema=apps/linkstack/prisma/schema.prisma  && nx build @veerly-dev/linkstack",
+    "prisma:stitch": "ts-node apps/linkstack/prisma/stitch-prisma-schema.ts",
+    "prisma:build": "prisma generate --schema=apps/linkstack/prisma/schema.prisma  && nx build @veerly-dev/linkstack",
+    "prisma:migrate": "cd apps/linkstack/prisma && npx prisma migrate dev",
+    "prisma:stitch-migrate": "ts-node apps/linkstack/prisma/stitch-prisma-schema.ts && cd apps/linkstack/prisma && npx prisma migrate dev",
+    "prisma:seed": "cd apps/linkstack/prisma && npx prisma db seed",
+    "dev": "nx serve @veerly-dev/linkstack",
     "start": "node dist/apps/linkstack/main.js"
   },
   "private": true,
@@ -14,8 +19,8 @@
     "@nx/eslint": "21.5.2",
     "@nx/eslint-plugin": "21.5.2",
     "@nx/jest": "21.5.2",
-    "@nx/js": "21.5.2",
-    "@nx/nest": "^21.5.2",
+    "@nx/js": "21.5.3",
+    "@nx/nest": "21.5.3",
     "@nx/node": "21.5.2",
     "@nx/web": "21.5.2",
     "@nx/webpack": "21.5.2",
@@ -43,7 +48,8 @@
   },
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "libs/dairy-book/*"
   ],
   "dependencies": {
     "@apollo/server": "^4.12.2",

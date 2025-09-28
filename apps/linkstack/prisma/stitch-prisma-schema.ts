@@ -1,0 +1,26 @@
+// tools/stitch-prisma-schema.ts
+import { readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
+
+const fragments = [
+  'libs/dairy-book/metadata/src/prisma/breed-type.prisma',
+  'libs/dairy-book/buffalo-inventory/src/prisma/buffalo.prisma',
+];
+
+const header = `
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+`;
+
+const stitched = fragments
+  .map((path) => readFileSync(join(process.cwd(), path), 'utf8'))
+  .join('\n\n');
+
+writeFileSync(join(__dirname, 'schema.prisma'), header + stitched);
+console.log('✅ Prisma schema stitched successfully.');

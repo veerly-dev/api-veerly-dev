@@ -17,5 +17,8 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["@veerly-dev/source"]
+  },
+  "paths": {
+    "@veerly-dev/buffalo-inventory": ["libs/dairy-book/buffalo-inventory/src/index.ts"]
   }
 }

@@ -8,6 +8,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OrganizationModule } from './organization/organization.module';
 import { AuthModule } from './auth/auth.module';
+import { ContextGqlAuthGuard } from './auth/google/context-gql-auth.guard';
 import { ConfigModule } from '@nestjs/config';
 
 import { JwtService } from '@nestjs/jwt';
@@ -15,13 +16,13 @@ import { JwtService } from '@nestjs/jwt';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // 👈 This is the key
+      isGlobal: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'apps/linkstack/dist/schema.gql'),
       context: ({ req }: { req: Request }) => {
-        const jwtService = new JwtService();
+        const jwtService = new JwtService({ secret: process.env.JWT_SECRET });
         const token = req.headers.authorization?.replace('Bearer ', '');
         const user = token ? jwtService.verify(token) : null;
         return { user };
@@ -31,6 +32,6 @@ import { JwtService } from '@nestjs/jwt';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ContextGqlAuthGuard],
 })
 export class AppModule {}

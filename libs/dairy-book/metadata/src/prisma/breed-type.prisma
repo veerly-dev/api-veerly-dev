@@ -1,12 +1,3 @@
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
 model BreedType {
     id           String    @id @default(uuid())
     name         String
@@ -53,30 +44,4 @@ model Role {
     codeId      Int
     name        String  @unique
     description String?
-}
-
-
-// libs/dairy-book/buffalo-inventory/prisma/buffalo.prisma
-model HealthStatus {
-    id            String    @id @default(uuid())
-    name          String
-    severityLevel Int?
-    notes         String?
-    buffalo       Buffalo[]
-}
-
-model Buffalo {
-    id              String   @id @default(uuid())
-    userId          String
-    tagId           String   @unique
-    breedTypeId     String
-    healthStatusId  String
-    ageInMonths     Int
-    weightKg        Float
-    lactationStage  String
-    lastCheckupDate DateTime
-    notes           String?
-
-    breedType    BreedType    @relation(fields: [breedTypeId], references: [id])
-    healthStatus HealthStatus @relation(fields: [healthStatusId], references: [id])
 }

@@ -1,9 +1,13 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { UseGuards } from '@nestjs/common';
 import { OrganizationService } from './organization.service';
 import { Organization } from './entities/organization.entity';
 import { CreateOrganizationInput } from './dto/create-organization.input';
 import { UpdateOrganizationInput } from './dto/update-organization.input';
 
+import { ContextGqlAuthGuard } from '../auth/google/context-gql-auth.guard';
+
+@UseGuards(ContextGqlAuthGuard)
 @Resolver(() => Organization)
 export class OrganizationResolver {
   constructor(private readonly organizationService: OrganizationService) {}
