@@ -5,7 +5,7 @@ COPY . .
 # Install system dependencies
 RUN apt-get update -y && apt-get install -y openssl
 # Install Node dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 # Generate Prisma Client
 RUN npx prisma generate --schema=apps/linkstack/prisma/schema.prisma
 # Build your NestJS app
