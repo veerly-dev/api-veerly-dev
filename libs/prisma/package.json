@@ -1,0 +1,39 @@
+{
+  "name": "@veerly-dev/prisma",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@veerly-dev/source": "./src/index.ts",
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "dist/libs/prisma",
+          "tsConfig": "libs/prisma/tsconfig.lib.json",
+          "packageJson": "libs/prisma/package.json",
+          "main": "libs/prisma/src/index.ts",
+          "assets": [
+            "libs/prisma/*.md"
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

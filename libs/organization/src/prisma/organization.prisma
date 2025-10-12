@@ -1,0 +1,38 @@
+model Organization {
+    id          String                   @id @default(uuid())
+    name        String
+    type        String? // e.g., 'Company', 'Department', 'Team'
+    parent      Organization?            @relation("SubOrgs", fields: [parentId], references: [id])
+    parentId    String?
+    subOrgs     Organization[]           @relation("SubOrgs")
+    memberships OrganizationMembership[]
+    createdAt   DateTime                 @default(now())
+}
+
+model User {
+    id          String                   @id @default(uuid())
+    name        String
+    email       String                   @unique
+    password    String
+    memberships OrganizationMembership[]
+    createdAt   DateTime                 @default(now())
+}
+
+model OrganizationMembership {
+    id             String       @id @default(uuid())
+    user           User         @relation(fields: [userId], references: [id])
+    userId         String
+    organization   Organization @relation(fields: [organizationId], references: [id])
+    organizationId String
+    role           String // e.g., 'Admin', 'Member', 'Manager'
+    joinedAt       DateTime     @default(now())
+
+    @@unique([userId, organizationId])
+}
+
+model Role {
+    id          String  @id @default(uuid())
+    codeId      Int
+    name        String  @unique
+    description String?
+}

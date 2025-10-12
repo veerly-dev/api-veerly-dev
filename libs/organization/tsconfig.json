@@ -4,16 +4,13 @@
   "include": [],
   "references": [
     {
-      "path": "../../libs/prisma"
+      "path": "../auth-google"
     },
     {
-      "path": "../../libs/auth-google"
+      "path": "../prisma"
     },
     {
-      "path": "../../libs/organization"
-    },
-    {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.lib.json"
     },
     {
       "path": "./tsconfig.spec.json"

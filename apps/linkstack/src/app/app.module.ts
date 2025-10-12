@@ -6,10 +6,10 @@ import { Request } from 'express';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { OrganizationModule } from './organization/organization.module';
-import { AuthModule } from './auth/auth.module';
 import { ContextGqlAuthGuard } from './auth/google/context-gql-auth.guard';
 import { ConfigModule } from '@nestjs/config';
+import { OrganizationModule } from '@veerly-dev/organization';
+import { AuthGoogleModule } from '@veerly-dev/auth-google';
 
 import { JwtService } from '@nestjs/jwt';
 
@@ -29,7 +29,7 @@ import { JwtService } from '@nestjs/jwt';
       },
     }),
     OrganizationModule,
-    AuthModule,
+    AuthGoogleModule,
   ],
   controllers: [AppController],
   providers: [AppService, ContextGqlAuthGuard],

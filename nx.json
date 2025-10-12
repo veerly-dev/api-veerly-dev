@@ -30,11 +30,7 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": [
-        "libs/dairy-book-buffalo-inventory/*",
-        "libs/dairy-book/buffalo-inventory/*",
-        "libs/dairy-book/metadata/*"
-      ]
+      "exclude": ["libs/blog/*", "libs/organization/*", "libs/auth-google/*"]
     },
     {
       "plugin": "@nx/webpack/plugin",
@@ -62,11 +58,7 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": [
-        "libs/dairy-book-buffalo-inventory/*",
-        "libs/dairy-book/buffalo-inventory/*",
-        "libs/dairy-book/metadata/*"
-      ],
+      "include": ["libs/blog/*", "libs/organization/*", "libs/auth-google/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"

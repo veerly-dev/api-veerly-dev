@@ -10,10 +10,16 @@
       "path": "./apps/linkstack"
     },
     {
-      "path": "./libs/dairy-book/buffalo-inventory"
+      "path": "./libs/blog"
     },
     {
-      "path": "./libs/dairy-book/metadata"
+      "path": "./libs/organization"
+    },
+    {
+      "path": "./libs/prisma"
+    },
+    {
+      "path": "./libs/auth-google"
     }
   ]
 }

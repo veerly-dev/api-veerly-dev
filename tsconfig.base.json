@@ -15,10 +15,13 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "strict": true,
+    "jsx": "preserve",
     "target": "es2022",
-    "customConditions": ["@veerly-dev/source"]
+    "customConditions": ["@veerly-dev/source"],
   },
   "paths": {
-    "@veerly-dev/buffalo-inventory": ["libs/dairy-book/buffalo-inventory/src/index.ts"]
+    "@veerly.dev/prisma": ["libs/prisma/src/index.ts"],
+    "@veerly.dev/organization": ["libs/organization/src/index.ts"],
+    "@veerly.dev/blog": ["libs/blog/src/index.ts"]
   }
 }

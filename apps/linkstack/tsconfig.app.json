@@ -19,5 +19,16 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/prisma/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/auth-google/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/organization/tsconfig.lib.json"
+    }
   ]
 }

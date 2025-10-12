@@ -3,8 +3,8 @@ import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 const fragments = [
-  'libs/dairy-book/metadata/src/prisma/breed-type.prisma',
-  'libs/dairy-book/buffalo-inventory/src/prisma/buffalo.prisma',
+  'libs/blog/src/prisma/blog.prisma',
+  'libs/organization/src/prisma/organization.prisma',
 ];
 
 const header = `
