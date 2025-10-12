@@ -1,0 +1,15 @@
+{
+  "name": "@veerly-dev/organization",
+  "projectType": "library",
+  "sourceRoot": "libs/organization/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/libs/organization",
+        "main": "libs/organization/src/index.ts",
+        "tsConfig": "libs/organization/tsconfig.lib.json"
+      }
+    }
+  }
+}

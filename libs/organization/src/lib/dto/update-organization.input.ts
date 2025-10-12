@@ -1,5 +1,5 @@
 import { CreateOrganizationInput } from './create-organization.input';
-import { InputType, Field, Int, PartialType } from '@nestjs/graphql';
+import { InputType, Field, PartialType } from '@nestjs/graphql';
 
 @InputType()
 export class UpdateOrganizationInput extends PartialType(

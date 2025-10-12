@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@veerly-dev/*": ["libs/*"]
+    },
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -21,6 +25,7 @@
   },
   "paths": {
     "@veerly.dev/prisma": ["libs/prisma/src/index.ts"],
+    "@veerly.dev/auth-google": ["libs/auth-google/src/index.ts"],
     "@veerly.dev/organization": ["libs/organization/src/index.ts"],
     "@veerly.dev/blog": ["libs/blog/src/index.ts"]
   }

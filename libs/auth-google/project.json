@@ -1,0 +1,15 @@
+{
+  "name": "@veerly-dev/auth-google",
+  "projectType": "library",
+  "sourceRoot": "libs/auth-google/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/libs/auth-google",
+        "main": "libs/auth-google/src/index.ts",
+        "tsConfig": "libs/auth-google/tsconfig.lib.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@veerly-dev/linkstack",
+  "projectType": "application",
+  "sourceRoot": "apps/linkstack/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/apps/linkstack",
+        "main": "apps/linkstack/src/main.ts",
+        "tsConfig": "apps/linkstack/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "build"
+      }
+    }
+  }
+}
