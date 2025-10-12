@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get install -y openssl
 # Install Node dependencies
 # RUN npm install --legacy-peer-deps
 RUN corepack enable && corepack prepare pnpm@latest --activate
-RUN pnpm install --legacy-peer-deps
+RUN pnpm install
 # Generate Prisma Client
 RUN npx prisma generate --schema=apps/linkstack/prisma/schema.prisma
 
