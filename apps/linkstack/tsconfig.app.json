@@ -22,9 +22,6 @@
   ],
   "references": [
     {
-      "path": "../../libs/prisma/tsconfig.lib.json"
-    },
-    {
       "path": "../../libs/auth-google/tsconfig.lib.json"
     },
     {

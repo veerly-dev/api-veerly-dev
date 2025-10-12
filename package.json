@@ -2,6 +2,7 @@
   "name": "@veerly-dev/source",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "prisma:stitch": "ts-node apps/linkstack/prisma/stitch-prisma-schema.ts",
     "prisma:build": "prisma generate --schema=apps/linkstack/prisma/schema.prisma  && nx build @veerly-dev/linkstack",
@@ -54,6 +55,7 @@
   ],
   "dependencies": {
     "@apollo/server": "^4.12.2",
+    "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.1",
     "@as-integrations/express5": "^1.1.2",
     "@nestjs/apollo": "^13.1.0",
     "@nestjs/common": "^11.0.0",
