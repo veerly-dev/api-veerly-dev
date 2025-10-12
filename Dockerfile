@@ -6,8 +6,6 @@ COPY . .
 RUN apt-get update -y && apt-get install -y openssl
 # Install Node dependencies
 RUN npm install --legacy-peer-deps
-# Build Prisma schemas
-RUN npx nx run prisma:stitch-migrate
 # Generate Prisma Client
 RUN npx prisma generate --schema=apps/linkstack/prisma/schema.prisma
 
