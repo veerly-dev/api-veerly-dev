@@ -7,9 +7,10 @@ import { AuthService } from './auth.service';
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   constructor(private authService: AuthService) {
     super({
-      clientID: process.env['GOOGLE_CLIENT_ID']!,
-      clientSecret: process.env['GOOGLE_CLIENT_SECRET']!,
-      callbackURL: process.env['GOOGLE_CALLBACK_URL']!,
+      clientID:
+        '204313397467-1vbr1j79oun0itfojvd20amntvos8kjt.apps.googleusercontent.com',
+      clientSecret: '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',
+      callbackURL: 'http://localhost:3000/api/auth/google/redirect',
       scope: ['profile', 'email'],
     });
   }

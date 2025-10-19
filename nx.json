@@ -15,6 +15,13 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudId": "68ec7147a3b9564bf0248794",
+  "projects": {
+    "auth": "libs/auth",
+    "blog": "libs/blog",
+    "drizzle-client": "libs/drizzle-client",
+    "profile": "libs/profile",
+    "api": "api"
+  },
   "plugins": [
     {
       "plugin": "@nx/webpack/plugin",

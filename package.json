@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "docker:build": "docker build -t api-veerly-dev .",
+    "docker:run": "docker run -p 3000:3000 api-veerly-dev",
+    "build": "nest build",
+    "start": "nest start",
     "api:build": "nx build api",
     "api:serve": "nx serve api",
     "db:generate": "pnpm drizzle-kit generate",

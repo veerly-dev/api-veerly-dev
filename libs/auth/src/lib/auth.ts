@@ -9,7 +9,7 @@ import { AuthController } from './auth.controller';
   imports: [
     PassportModule.register({ defaultStrategy: 'google' }),
     JwtModule.register({
-      secret: process.env['JWT_SECRET'] || 'CHANGE_ME',
+      secret: 'veerly-fullstack-developer',
       signOptions: { expiresIn: '1d' },
     }),
   ],
