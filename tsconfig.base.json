@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@api-veerly-dev/auth": ["libs/auth/src/index.ts"],
+      "@api-veerly-dev/blog": ["libs/blog/src/index.ts"],
+      "@api-veerly-dev/drizzle-client": ["libs/drizzle-client/src/index.ts"],
+      "@api-veerly-dev/profile": ["libs/profile/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
