@@ -5,7 +5,7 @@ import { db } from '@api-veerly-dev/drizzle-client';
 import { users } from '@api-veerly-dev/drizzle-client';
 
 @Injectable()
-export class AuthService {
+export class GoogleAuthService {
   constructor(private jwtService: JwtService) {}
 
   async findOrCreateUser(profile: any) {

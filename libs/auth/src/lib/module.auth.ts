@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthService } from './auth.service';
+import { GoogleAuthService } from './service.google';
 import { GoogleStrategy } from './google.strategy';
-import { AuthController } from './auth.controller';
+import { GoogleAuthController } from './controller.google';
+import { AuthResolver } from './resolver.auth';
+import { AuthService } from './services.auth';
 
 @Module({
   imports: [
@@ -13,8 +15,8 @@ import { AuthController } from './auth.controller';
       signOptions: { expiresIn: '1d' },
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService, GoogleStrategy],
-  exports: [AuthService, PassportModule],
+  controllers: [GoogleAuthController],
+  providers: [GoogleAuthService, GoogleStrategy, AuthResolver, AuthService],
+  exports: [GoogleAuthService, PassportModule],
 })
 export class AuthModule {}

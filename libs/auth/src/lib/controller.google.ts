@@ -3,7 +3,7 @@ import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
 
 @Controller('auth')
-export class AuthController {
+export class GoogleAuthController {
   // Step 1: Redirects the user to Google's OAuth consent screen
   @Get('google')
   @UseGuards(AuthGuard('google'))
