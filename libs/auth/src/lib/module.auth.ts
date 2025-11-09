@@ -5,7 +5,7 @@ import { GoogleAuthService } from './service.google';
 import { GoogleStrategy } from './google.strategy';
 import { GoogleAuthController } from './controller.google';
 import { AuthResolver } from './resolver.auth';
-import { AuthService } from './services.auth';
+import { AuthService } from './service.auth';
 
 @Module({
   imports: [

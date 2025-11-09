@@ -1,6 +1,6 @@
 // libs/auth/src/lib/auth.resolver.ts
 import { Resolver, Mutation, Args } from '@nestjs/graphql';
-import { AuthService } from './services.auth';
+import { AuthService } from './service.auth';
 import { SignInInput, SignUpInput } from './dto/req.auth';
 import { AuthResponse } from './dto/resp.auth';
 

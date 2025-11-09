@@ -2,10 +2,23 @@
 
 This library was generated with [Nx](https://nx.dev).
 
-## Building
+mutation {
+signUp(input: {
+name: "Veera",
+email: "veera@example.com",
+password: "mypassword"
+}) {
+message
+token
+}
+}
 
-Run `nx build auth` to build the library.
-
-## Running unit tests
-
-Run `nx test auth` to execute the unit tests via [Vitest](https://vitest.dev/).
+mutation {
+signIn(input: {
+email: "veera@example.com",
+password: "mypassword"
+}) {
+message
+token
+}
+}

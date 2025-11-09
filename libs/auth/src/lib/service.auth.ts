@@ -33,7 +33,9 @@ export class AuthService {
       where: eq(users.email, email),
     });
     if (existingUser) {
-      throw new BadRequestException('User already exists');
+      return {
+        message: 'This email is already in use. Please log in.',
+      };
     }
 
     // Hash password
@@ -72,13 +74,18 @@ export class AuthService {
       where: eq(users.email, email),
     });
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
+      return {
+        message:
+          'This email doesn’t exist in our system. Sign up to get started.',
+      };
     }
 
     // Validate password
     const isValid = await bcrypt.compare(password, user.passwordHash ?? '');
     if (!isValid) {
-      throw new UnauthorizedException('Invalid credentials');
+      return {
+        message: 'Incorrect password. Please try again.',
+      };
     }
 
     // Generate token
