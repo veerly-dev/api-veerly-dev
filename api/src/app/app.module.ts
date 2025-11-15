@@ -6,6 +6,7 @@ import { join } from 'path';
 import { ProfileResolver } from '@api-veerly-dev/profile';
 import { AuthModule } from '@api-veerly-dev/auth';
 import { BlogModule } from '@api-veerly-dev/blog';
+
 @Module({
   imports: [
     AuthModule,
