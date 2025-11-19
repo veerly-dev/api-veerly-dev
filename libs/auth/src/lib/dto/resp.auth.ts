@@ -1,11 +1,34 @@
-// libs/auth/src/lib/dto/auth.response.ts
-import { ObjectType, Field } from '@nestjs/graphql';
+// libs/auth/src/lib/dto/resp.auth.ts
+import { Field, ObjectType } from '@nestjs/graphql';
+@ObjectType()
+export class UserResponse {
+  @Field()
+  id!: string;
+
+  @Field({ nullable: true })
+  name!: string | null;
+
+  @Field()
+  email!: string;
+
+  @Field({ nullable: true })
+  role!: string | null;
+}
 
 @ObjectType()
 export class AuthResponse {
-  @Field()
+  @Field({ nullable: true })
   message?: string;
 
   @Field({ nullable: true })
-  token?: string;
+  accessToken?: string;
+
+  @Field({ nullable: true })
+  refreshToken?: string;
+
+  @Field({ nullable: true })
+  valid?: boolean;
+
+  @Field(() => UserResponse, { nullable: true })
+  user?: UserResponse;
 }

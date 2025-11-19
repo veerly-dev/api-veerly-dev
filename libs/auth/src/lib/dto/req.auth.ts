@@ -1,4 +1,4 @@
-// libs/auth/src/lib/dto/auth.input.ts
+// libs/auth/src/lib/dto/req.auth.ts
 import { InputType, Field } from '@nestjs/graphql';
 
 @InputType()
