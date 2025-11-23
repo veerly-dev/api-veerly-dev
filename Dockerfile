@@ -22,7 +22,7 @@ RUN pnpm install
 
 # Build all libs first
 RUN npx nx build auth --verbose
-RUN npx nx build blog --verbose
+RUN npx nx build cloudinary --verbose
 RUN npx nx build drizzle-client --verbose
 RUN npx nx build profile --verbose
 
