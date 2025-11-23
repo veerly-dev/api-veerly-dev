@@ -1,9 +1,8 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-const cloudinaryCloudName = process.env['CLOUDINARY_CLOUD_NAME'] || 'dnix97dic';
-const cloudinaryAPIKey = process.env['CLOUDINARY_API_KEY'] || '787744844345457';
-const cloudinaryAPISecret =
-  process.env['CLOUDINARY_API_SECRET'] || 'Sq6jwrtVgJw9RO3wyFTbNGHypLM';
+const cloudinaryCloudName = process.env['CLOUDINARY_CLOUD_NAME'];
+const cloudinaryAPIKey = process.env['CLOUDINARY_API_KEY'];
+const cloudinaryAPISecret = process.env['CLOUDINARY_API_SECRET'];
 
 cloudinary.config({
   cloud_name: cloudinaryCloudName,
