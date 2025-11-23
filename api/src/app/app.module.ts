@@ -5,12 +5,10 @@ import { join } from 'path';
 
 import { ProfileResolver } from '@api-veerly-dev/profile';
 import { AuthModule } from '@api-veerly-dev/auth';
-import { BlogModule } from '@api-veerly-dev/blog';
 
 @Module({
   imports: [
     AuthModule,
-    BlogModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'dist/apps/api/schema.gql'),

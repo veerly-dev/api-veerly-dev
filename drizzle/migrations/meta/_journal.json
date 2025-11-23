@@ -15,6 +15,13 @@
       "when": 1763529694041,
       "tag": "0001_even_ares",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763909582272,
+      "tag": "0002_smart_betty_ross",
+      "breakpoints": true
     }
   ]
 }
