@@ -1,19 +1,9 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-const cloudinaryCloudName = process.env['CLOUDINARY_CLOUD_NAME'];
-if (!cloudinaryCloudName) {
-  throw new Error(
-    'CLOUDINARY_CLOUD_NAME is not defined in environment variables'
-  );
-}
-const cloudinaryAPIKey = process.env['CLOUDINARY_API_KEY'];
-if (!cloudinaryAPIKey) {
-  throw new Error('CLOUDINARY_API_KEY is not defined in environment variables');
-}
-const cloudinaryAPISecret = process.env['CLOUDINARY_API_SECRET'];
-if (!cloudinaryAPISecret) {
-  throw new Error('CLOUDINARY_API_KEY is not defined in environment variables');
-}
+const cloudinaryCloudName = process.env['CLOUDINARY_CLOUD_NAME'] || 'dnix97dic';
+const cloudinaryAPIKey = process.env['CLOUDINARY_API_KEY'] || '787744844345457';
+const cloudinaryAPISecret =
+  process.env['CLOUDINARY_API_SECRET'] || 'Sq6jwrtVgJw9RO3wyFTbNGHypLM';
 
 cloudinary.config({
   cloud_name: cloudinaryCloudName,
