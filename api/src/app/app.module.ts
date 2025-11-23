@@ -5,6 +5,9 @@ import { join } from 'path';
 
 import { ProfileResolver } from '@api-veerly-dev/profile';
 import { AuthModule } from '@api-veerly-dev/auth';
+import { UploadResolver } from './cloudinary.resolver';
+import { UploadScalar } from './cloudinary.scalar';
+import { CloudinaryService } from './cloudinary.service';
 
 @Module({
   imports: [
@@ -14,8 +17,9 @@ import { AuthModule } from '@api-veerly-dev/auth';
       autoSchemaFile: join(process.cwd(), 'dist/apps/api/schema.gql'),
       path: '/serve/graphql',
       playground: true,
+      csrfPrevention: false,
     }),
   ],
-  providers: [ProfileResolver],
+  providers: [ProfileResolver, UploadResolver, CloudinaryService],
 })
 export class AppModule {}
