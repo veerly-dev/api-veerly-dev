@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@api-veerly-dev/auth": ["libs/auth/src/index.ts"],
+      "@api-veerly-dev/cloudinary": ["libs/cloudinary/src/index.ts"],
       "@api-veerly-dev/drizzle-client": ["libs/drizzle-client/src/index.ts"],
       "@api-veerly-dev/profile": ["libs/profile/src/index.ts"]
     }

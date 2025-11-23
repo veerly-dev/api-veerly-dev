@@ -5,13 +5,12 @@ import { join } from 'path';
 
 import { ProfileResolver } from '@api-veerly-dev/profile';
 import { AuthModule } from '@api-veerly-dev/auth';
-import { UploadResolver } from './cloudinary.resolver';
-import { UploadScalar } from './cloudinary.scalar';
-import { CloudinaryService } from './cloudinary.service';
+import { CloudinaryModule } from '@api-veerly-dev/cloudinary';
 
 @Module({
   imports: [
     AuthModule,
+    CloudinaryModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'dist/apps/api/schema.gql'),
@@ -20,6 +19,6 @@ import { CloudinaryService } from './cloudinary.service';
       csrfPrevention: false,
     }),
   ],
-  providers: [ProfileResolver, UploadResolver, CloudinaryService],
+  providers: [ProfileResolver],
 })
 export class AppModule {}

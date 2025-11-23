@@ -11,7 +11,8 @@
     "api:serve": "nx serve api",
     "db:generate": "pnpm drizzle-kit generate",
     "db:push": "pnpm drizzle-kit push",
-    "db:migrate": "pnpm db:generate && pnpm db:push"
+    "db:migrate": "pnpm db:generate && pnpm db:push",
+    "nx:generate": "nx g @nx/nest:library --directory=libs/cloudinary"
   },
   "private": true,
   "devDependencies": {
@@ -21,8 +22,8 @@
     "@nx/eslint": "21.6.4",
     "@nx/eslint-plugin": "21.6.4",
     "@nx/jest": "21.6.4",
-    "@nx/js": "21.6.4",
-    "@nx/nest": "^21.6.4",
+    "@nx/js": "21.6.5",
+    "@nx/nest": "21.6.5",
     "@nx/node": "21.6.4",
     "@nx/vite": "21.6.4",
     "@nx/web": "21.6.4",
